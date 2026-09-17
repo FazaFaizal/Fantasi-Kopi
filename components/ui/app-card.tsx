@@ -1,9 +1,14 @@
-import { View } from 'react-native';
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
+import { View } from "react-native";
 
-export function AppCard({ children }: { children: ReactNode }) {
+type Props = {
+  children: ReactNode;
+  className?: string;
+};
+
+export function AppCard({ children, className = "" }: Props) {
   return (
-    <View className="bg-surface rounded-card p-4 shadow-sm border border-gray-100">
+    <View className={`rounded-card border border-gray-100 bg-surface p-4 shadow-sm ${className}`}>
       {children}
     </View>
   );
